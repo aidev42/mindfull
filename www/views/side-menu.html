@@ -1,0 +1,47 @@
+<ion-side-menus enable-menu-with-back-views="false" ng-init="initApp()">
+
+  <ion-side-menu-content class="post-size-14px">
+    <ion-nav-bar class="bar app-top-bar">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+    <ion-side-menu side="left" class="main-menu" expose-aside-when="large">
+    <ion-content>
+    <ion-list>
+        <ion-item class="heading-item item item-avatar" nav-clear menu-close ui-sref="app.main">
+          <div class="user-image-container">
+            <pre-img ratio="_1_1" helper-class="rounded-image">
+              <img class="user-image" ng-src="{{user.picture}}" spinner-on-load>
+            </pre-img>
+          </div>
+          <h2 class="greeting">Hi {{user.firstName}}</h2>
+          <p class="message">Welcome back</p>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.main">
+          <i class="icon ion-ios-color-filter-outline"></i>
+          <h2 class="menu-text">Spheres</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.edit">
+          <i class="icon ion-ios-list-outline"></i>
+          <h2 class="menu-text">Edit History</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.targets">
+          <i class="icon ion-ios-settings"></i>
+          <h2 class="menu-text">Targets</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.analyze">
+          <i class="icon ion-ios-pie-outline"></i>
+          <h2 class="menu-text">Analyze</h2>
+        </ion-item>
+
+    </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

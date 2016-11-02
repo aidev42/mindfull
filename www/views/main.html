@@ -1,0 +1,67 @@
+<ion-view can-swipe-back="false" class="profile-view" ng-init="initMain()">
+
+<!--   <ion-side-menus>
+
+    <ion-side-menu side="left">
+    <ion-content>
+    <ion-list>
+        <ion-item class="heading-item item item-avatar" nav-clear menu-close ui-sref="app.profile">
+          <div class="user-image-container">
+            <pre-img ratio="_1_1" helper-class="rounded-image">
+              <img class="user-image" ng-src="{{user.picture}}" spinner-on-load>
+            </pre-img>
+          </div>
+          <h2 class="greeting">Hi {{user.firstName}}</h2>
+          <p class="message">Welcome back</p>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="main">
+          <i class="icon ion-ios-color-filter-outline"></i>
+          <h2 class="menu-text">Spheres</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="edit">
+          <i class="icon ion-ios-list-outline"></i>
+          <h2 class="menu-text">Edit History</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="targets">
+          <i class="icon ion-ios-settings"></i>
+          <h2 class="menu-text">Targets</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="analyze">
+          <i class="icon ion-ios-pie-outline"></i>
+          <h2 class="menu-text">Analyze</h2>
+        </ion-item>
+
+    </ion-list>
+    </ion-content>
+    </ion-side-menu>
+
+    <ion-side-menu-content> -->
+      <!-- <ion-nav-bar> -->
+        <ion-nav-title>Life Spheres</ion-nav-title>
+      <!-- </ion-nav-bar> -->
+
+      <ion-content id="sphereContent" class="has-header" has-bouncing="false">
+        <ion-item class="row sphere-row">
+          <div class="col">
+            <button class="button button-sphere button-full button-energized Work" ng-click="activity('Work')">{{spheres[0]}}</button>
+          </div>
+          <div class="col">
+            <button class="button button-sphere button-full button-balanced Social" ng-click="activity('Social')">{{spheres[1]}}</button>
+          </div>
+        </ion-item>
+        <ion-item class="row sphere-row">
+            <div class="col">
+              <button class="button button-sphere button-full button-calm Self" ng-click="activity('Self')">{{spheres[2]}}</button>
+            </div>
+            <div class="col">
+              <button class="button button-full button-sphere button-dark Rest" ng-click="activity('Rest')">{{spheres[3]}}</button>
+            </div>
+        </ion-item>
+        <a class="button button-assertive button-block button-outline" ng-click="showLogOutMenu()">Log Out</a>
+      </ion-content>
+
+<!--     </ion-side-menu-content>
+
+  </ion-side-menus> -->
+
+</ion-view>

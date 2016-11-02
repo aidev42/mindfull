@@ -1,0 +1,27 @@
+<ion-view can-swipe-back="false" class="settings-view">
+  <ion-nav-title>Analyze</ion-nav-title>
+  <ion-content>
+
+
+    <button class="button margin-top center-button icon-left ion-loop button-positive" ng-click="getData()">Refresh</button>
+
+    <div class="card">
+      <div class="item item-divider">Radar Chart
+      </div>
+      <div class="item item-text-wrap">
+        <canvas id="radar" class="chart chart-radar" data="chartData" labels="chartLabels" legend="true" series="chartSeries" options="{showTooltips: false}"></canvas>
+      </div>
+    </div>
+
+    <!-- adding second chart causes top one not to render (order is not important, flipping it still results it only second chart rendering)  seems to be a bug with angularchart-->
+
+<!--     <div class="card">
+      <div class="item item-divider">Bar Chart
+      </div>
+      <div class="item item-text-wrap">
+        <canvas id="bar" class="chart chart-bar" data="barchartData" labels="barchartLabels" legend="true" series="barchartSeries" options="{showTooltips: false}"></canvas>
+      </div>
+    </div> -->
+
+  </ion-content>
+</ion-view>

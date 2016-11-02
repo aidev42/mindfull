@@ -1,0 +1,23 @@
+<ion-view can-swipe-back="false" class="settings-view">
+  <ion-nav-title>Edit History</ion-nav-title>
+
+  <ion-content class="has-header" has-bouncing="false">
+        <ion-list show-reorder="false">
+          <ion-item can-swipe="true" ng-repeat="activity in Activities">
+            <div class ="row">
+              <div class="col">
+                <strong>
+                {{activity.type}}: {{activity.hours}} Hours {{activity.minutes}} Minutes</strong>
+              </div>
+            </div>
+            <div class ="row">
+              <div class="col">{{activity.started | amCalendar:referenceTime:formats}} - {{activity.ended | amCalendar:referenceTime:formats}}
+              </div>
+            </div>
+<!--             <ion-option-button class="custom-button button-large icon ion-ios-star" ng-click="unfavorite(key)"></ion-option-button> -->
+            <ion-option-button class="button-assertive button-large icon ion-trash-a" ng-click="delete(activity)"></ion-option-button>
+          </ion-item>
+        </ion-list>
+
+  </ion-content>
+</ion-view>

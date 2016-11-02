@@ -1,0 +1,44 @@
+<ion-view can-swipe-back="false" class="settings-view">
+  <ion-nav-title>Targets</ion-nav-title>
+
+  <ion-content class="has-header" has-bouncing="false">
+
+  <div class="list">
+    <div class="item item-divider">Target Hours per Week in Each Sphere</div>
+      <div class="list list-inset">
+        <div class="item item-divider">Work: {{data.workHours}} Hrs/wk</div>
+        <div class="item range range-energized">
+          <!-- <span>0</span> -->
+          <input type="range" min="0" max="168" name="workHours" ng-model="data.workHours" ng-change="setHours()">
+          <span>168</span>
+        </div>
+
+        <div class="item item-divider">Social: {{data.socialHours}} Hrs/wk</div>
+        <div class="item range range-balanced">
+          <!-- <span>0</span> -->
+          <input type="range" min="0" max="168" name="socialHours" ng-model="data.socialHours" ng-change="setHours()">
+          <span>168</span>
+        </div>
+
+        <div class="item item-divider">Self: {{data.selfHours}} Hrs/wk</div>
+        <div class="item range range-calm">
+          <!-- <span>0</span> -->
+          <input type="range" min="0" max="168" name="selfHours" ng-model="data.selfHours" ng-change="setHours()">
+          <span>168</span>
+        </div>
+
+        <div class="item item-divider">Rest: {{data.restHours}} Hrs/wk</div>
+        <div class="item range range-dark">
+          <!-- <span>0</span> -->
+          <input type="range" min="0" max="168" name="restHours" ng-model="data.restHours" ng-change="setHours()">
+          <span>168</span>
+        </div>
+      </div>
+    <div class="item item-divider">{{data.totalHours}} Total Hours of 168/wk</div>
+  </div>
+
+
+  <button class="button center-button icon-left ion-ios-download-outline button-positive" ng-click="save()">Save</button>
+
+  </ion-content>
+</ion-view>
