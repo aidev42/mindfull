@@ -1,23 +1,57 @@
 <ion-view can-swipe-back="false" class="settings-view">
-  <ion-nav-title>Edit History</ion-nav-title>
+  <ion-nav-title>Edit Activity</ion-nav-title>
+  <ion-nav-buttons side="right">
+    <button class="right button button-icon icon ion-ios-download-outline" ng-click="save()">Save</button>
+  </ion-nav-buttons>
 
   <ion-content class="has-header" has-bouncing="false">
-        <ion-list show-reorder="false">
-          <ion-item can-swipe="true" ng-repeat="activity in Activities">
-            <div class ="row">
-              <div class="col">
-                <strong>
-                {{activity.type}}: {{activity.hours}} Hours {{activity.minutes}} Minutes</strong>
-              </div>
-            </div>
-            <div class ="row">
-              <div class="col">{{activity.started | amCalendar:referenceTime:formats}} - {{activity.ended | amCalendar:referenceTime:formats}}
-              </div>
-            </div>
-<!--             <ion-option-button class="custom-button button-large icon ion-ios-star" ng-click="unfavorite(key)"></ion-option-button> -->
-            <ion-option-button class="button-assertive button-large icon ion-trash-a" ng-click="delete(activity)"></ion-option-button>
-          </ion-item>
-        </ion-list>
+
+    <div class="card">
+      <div class="item item-divider">Current Settings
+      </div>
+      <div class ="row">
+        <div class="col">
+          <strong>
+          {{activity.type}}: {{activity.hours}} Hours {{activity.minutes}} Minutes</strong>
+        </div>
+      </div>
+      <div class ="row">
+        <div class="col">{{activity.started | amCalendar:referenceTime:formats}} - {{activity.ended | amCalendar:referenceTime:formats}}
+        </div>
+      </div>
+<!--       <div class ="row">
+        <div class="col">{{activity.started | amUtc | amLocal | amDateFormat: 'ddd, MMM Do, h:mm a'}} - {{activity.ended | amUtc | amLocal | amDateFormat: 'ddd, MMM Do, h:mm a'}}
+        </div>
+      </div> -->
+    </div>
+
+    <div class="card">
+      <div class="item item-divider">Set Start Time
+      </div>
+      <ion-list>
+        <div class="item" ion-datetime-picker am-pm ng-model="data.startTimeInput">
+            {{data.startTimeInput| date: "MMM dd, yyyy h:mm a"}}
+        </div>
+      </ion-list>
+
+     <!--  <ion-list>
+        <div moment-picker="ctrl.startInput" format="1111" min-view="day"today="true">Click Here {{ctrl.startInput}}
+        </div>
+      </ion-list> -->
+
+    </div>
+
+    <div class="card">
+      <div class="item item-divider">Set End Time
+      </div>
+      <ion-list>
+        <div class="item" ion-datetime-picker am-pm ng-model="data.endTimeInput">
+            {{data.endTimeInput| date: "MMM dd, yyyy h:mm a"}}
+        </div>
+      </ion-list>
+
+    </div>
+
 
   </ion-content>
 </ion-view>

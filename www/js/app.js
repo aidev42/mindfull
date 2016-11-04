@@ -3,7 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('Mindfilled', ['ionic','Mindfilled.services', 'ngStorage', 'angularMoment', 'chart.js'])
+angular.module('Mindfilled', ['ionic','Mindfilled.services', 'ngStorage', 'angularMoment', 'chart.js', 'ion-datetime-picker'
+  //, 'moment-picker'
+  ])
 
 // .run(function($ionicPlatform, PushNotificationsService, $rootScope, $ionicConfig, $timeout) {
 .run(function($ionicPlatform, $rootScope, $ionicConfig, $timeout) {
@@ -77,6 +79,16 @@ angular.module('Mindfilled', ['ionic','Mindfilled.services', 'ngStorage', 'angul
       'menuContent': {
         templateUrl: "views/main.html",
         controller: 'MainController'
+      }
+    }
+  })
+
+  .state('app.history', {
+    url: "/history",
+    views: {
+      'menuContent': {
+        templateUrl: "views/history.html",
+        controller: 'HistoryController'
       }
     }
   })
